@@ -1,4 +1,4 @@
-/*(Game: display a checkerboard) Write a program that displays
+package Opgave14_6;/*(Game: display a checkerboard) Write a program that displays
 a checkerboard in which each white and black cell is a
 Rectangle with a fill color black or white,
 as shown in Figure 14.44c.
