@@ -28,9 +28,10 @@ public class Opgave14_8 extends Application {
         for (int row = 0 ; row < 9 ; row++ ){
             for (int column = 0 ; column < 6 ; column++){
 
-                String cardsPath = ("Cards/" + (count) + ".png");
+                Image cardsPath = new Image("Cards/" + (count) + ".png");
 
                 ImageView image = new ImageView(cardsPath);
+
                 gPane.add(image, column, row);
 
 
