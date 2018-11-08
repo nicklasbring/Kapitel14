@@ -8,6 +8,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Opgave14_8 extends Application {
 
@@ -20,33 +22,43 @@ public class Opgave14_8 extends Application {
 
         GridPane gPane = new GridPane();
         int count = 0;
+        ArrayList<Integer> cards = new ArrayList<>();
 
 
+        fillArray(cards);
+        Collections.shuffle(cards);
 
 
         //Double for loop. gives 9 rows and 6 columns. total of 54.
         for (int row = 0 ; row < 9 ; row++ ){
             for (int column = 0 ; column < 6 ; column++){
 
-                Image cardsPath = new Image("Cards/" + (count) + ".png");
+                Image cardsPath = new Image("Opgave14_8/card/" + cards.get(count) + ".png");
 
                 ImageView image = new ImageView(cardsPath);
+                image.setFitHeight(60);
+                image.setFitWidth(45);
+
 
                 gPane.add(image, column, row);
 
-
-
             count++;
-            row++;
-
-        }
+            }
         }
 
 
-        Scene scene = new Scene(gPane, 400, 400);
-        primaryStage.setTitle("Checkerboard");
+        Scene scene = new Scene(gPane , 270 , 540);
+        primaryStage.setTitle("Playing cards");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+
+    public void fillArray(ArrayList<Integer> cards){
+        for (int ammount = 1 ; ammount <= 54 ; ammount++){
+            cards.add(ammount);
+        }
+
 
     }
 }
